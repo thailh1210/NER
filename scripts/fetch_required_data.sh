@@ -21,10 +21,10 @@ if [ ! -d $DATA_PATH ]; then
 fi
 
 # Get srl-conll package.
-wget -O "${DATA_PATH}/sciERC_processed.tar.gz" http://ssli.ee.washington.edu/tial/projects/sciIE/data/sciERC_processed.tar.gz
+wget -O "${DATA_PATH}/sciERC_processed.tar.gz" http://nlp.cs.washington.edu/sciIE/data/sciERC_processed.tar.gz
 tar xf "${DATA_PATH}/sciERC_processed.tar.gz" -C "${DATA_PATH}"
 rm "${DATA_PATH}/sciERC_processed.tar.gz"
 
-python scripts/filter_embeddings.py ${EMB_PATH}/glove.840B.300d.txt ${EMB_PATH}/glove.840B.300d.txt.filtered ${DATA_PATH}/processed_data/json/train.json ${DATA_PATH}/processed_data/json/dev.json
+python /content/NER/scripts/filter_embeddings.py ${EMB_PATH}/glove.840B.300d.txt ${EMB_PATH}/glove.840B.300d.txt.filtered ${DATA_PATH}/processed_data/json/train.json ${DATA_PATH}/processed_data/json/dev.json
 
-python scripts/get_char_vocab.py 
+python /content/NER/scripts/get_char_vocab.py
